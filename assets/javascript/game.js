@@ -1,6 +1,8 @@
 
 let wins = 0;
 
+document.getElementById("wincount").innerHTML=wins;
+
 // Words to guess array
 
 let words = ['frodo', 'gandalf', 'samwise', 'gollum', 'sauron', 'aragorn', 'legolas', 'mordor', 'shadowfax',];
@@ -26,17 +28,17 @@ document.getElementById("blankword").innerHTML=answers;
 console.log(answers);
 console.log(remainingLetters);
 
-// Long form of user guesses
+// User Guesses
 
-let guessesRemaining = 12;
+let guessesRemaining = 12; // How many guesses are remaining
 
-let guessedLetters = [];
+document.getElementById("guessesremaining").innerHTML=guessesRemaining;
 
-// let playerGuess = event.key;
+let guessedLetters = []; // Display letters that have been guessed but are not correct
 
-if (playerGuess = "")
+let playerGuess = event.key; // Log user key input
 
-// Inserted HTML paragraphs
+//if (playerGuess = "")
 
 
 // Pseudo code
