@@ -1,7 +1,9 @@
 
-// Words to guess
+let wins = 0;
 
-var words = ['frodo', 'gandalf', 'samwise', 'gollum', 'sauron', 'aragorn', 'legolas', 'mordor', 'shadowfax',];
+// Words to guess array
+
+let words = ['frodo', 'gandalf', 'samwise', 'gollum', 'sauron', 'aragorn', 'legolas', 'mordor', 'shadowfax',];
 
 // Random word selection
 
@@ -19,19 +21,20 @@ for (let i = 0; i < chooseWord.length; i++) {
 
 let remainingLetters = chooseWord.length;
 
+document.getElementById("blankword").innerHTML=answers;
+
 console.log(answers);
 console.log(remainingLetters);
 
-// Convert all letters to lower case
-
-document.onkeyup = function() {
-    let userGuess = String.fromCharCode(event.keyCode).toLowerCase()
-
-}
-
 // Long form of user guesses
 
+let guessesRemaining = 12;
 
+let guessedLetters = [];
+
+// let playerGuess = event.key;
+
+if (playerGuess = "")
 
 // Inserted HTML paragraphs
 
@@ -67,3 +70,9 @@ document.onkeyup = function() {
 // 6. Show the player their progress. - loop
 // 7. Finish when the player has guessed the word.
 
+// Convert all letters to lower case
+
+document.onkeyup = function() {
+    let userGuess = String.fromCharCode(event.keyCode).toLowerCase()
+
+}
