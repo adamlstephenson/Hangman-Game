@@ -36,34 +36,17 @@ document.getElementById("guessesremaining").innerHTML=guessesRemaining;
 
 let guessedLetters = []; // Display letters that have been guessed but are not correct
 
-let playerGuess = event.key; // Log user key input
+document.onkeyup = function(event) {
 
-//if (playerGuess = "")
+    let playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+    console.log(playerGuess);
+}
+
+document.getElementById("guessedletters").innerHTML=guessedLetters;
 
 
 // Pseudo code
-
-// 1. Pick a random word.
-
-                            // Pick a random word
-
-                            // While the word has not been guessed {
-                            //  Show the player their current progress
-                            //  Get a guess from the player
-
-                            //  If the player wants to quit the game {
-                            //  Quit the game
-                            //  }
-                            //  Else If the guess is not a single letter {
-                            //  Tell the player to pick a single letter
-                            //  }
-                            //  Else {
-                            //  If the guess is in the word {
-                            //  Update the player's progress with the guess
-                            //  }
-                            //  }
-                            // }
-                            // Congratulate the player on guessing the word
 
 // 2. Take the player’s guess. - loop
 // 3. Quit the game if the player wants to. - loop
