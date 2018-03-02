@@ -7,15 +7,20 @@ var words = ['frodo', 'gandalf', 'samwise', 'gollum', 'sauron', 'aragorn', 'lego
 
 let chooseWord = words[Math.floor(Math.random() * words.length)];
 
+console.log(chooseWord)
 
 // Answer array and loop
 
 let answers = [];
+
 for (let i = 0; i < chooseWord.length; i++) {
     answers[i] = "_";
 }
 
-let remainingLetters = chooseWord
+let remainingLetters = chooseWord.length;
+
+console.log(answers);
+console.log(remainingLetters);
 
 // Convert all letters to lower case
 
