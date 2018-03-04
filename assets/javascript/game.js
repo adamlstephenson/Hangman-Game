@@ -1,7 +1,7 @@
 
 let wins = 0;
 
-document.getElementById("wincount").innerHTML=wins;
+    document.getElementById("wincount").innerHTML=wins;
 
 // Words to guess array
 
@@ -14,7 +14,7 @@ let indiLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', '
 
 let chooseWord = words[Math.floor(Math.random() * words.length)];
 
-console.log(chooseWord)
+    console.log(chooseWord)
 
 // Answer array and loop
 
@@ -26,10 +26,10 @@ for (let i = 0; i < chooseWord.length; i++) {
 
 let remainingLetters = chooseWord.length;
 
-document.getElementById("blankword").innerHTML=answers.join("");
+    document.getElementById("blankword").innerHTML=answers.join("");
 
-console.log(answers);
-console.log(remainingLetters);
+        console.log(answers);
+        console.log(remainingLetters);
 
 
 
@@ -37,22 +37,27 @@ console.log(remainingLetters);
 
 let guessesRemaining = 12; // How many guesses are remaining
 
-document.getElementById("guessesremaining").innerHTML=guessesRemaining;
+    document.getElementById("guessesremaining").innerHTML=guessesRemaining;
 
-// let guessedLetters = []; // Display letters that have been guessed but are not correct
+let guessedLetters = []; // Display letters that have been guessed but are not correct
 
 document.onkeypress = function(event) {
     let playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    guessesRemaining--;
+    document.getElementById("guessesremaining").innerHTML=guessesRemaining;
     
     for (var j = 0; j < chooseWord.length; j++) {
+
         if (chooseWord[j] === playerGuess) {
         answers[j] = playerGuess;
-        document.getElementById("blankword").innerHTML=playerGuess.replace(" ");
-        guessesRemaining--;
-        remainingLetters--; 
-        } else if (chooseWord[j] != playerGuess) {
-            document.getElementById("guessesremaining").innerHTML=guessesRemaining;
-        }
+        document.getElementById("blankword").innerHTML=answers.join("");
+        remainingLetters--;
+        console.log(remainingLetters);
+        
+        // } else (chooseWord[j] != playerGuess); {
+        //     document.getElementById("guessedletters").innerHTML = playerGuess; 
+
+        // }
         
         console.log(guessesRemaining)
         }
