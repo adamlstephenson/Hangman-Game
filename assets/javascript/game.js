@@ -47,17 +47,23 @@ document.onkeypress = function(event) {
     for (var j = 0; j < chooseWord.length; j++) {
         if (chooseWord[j] === playerGuess) {
         answers[j] = playerGuess;
-        document.getElementById("blankword").innerHTML=playerGuess;
+        document.getElementById("blankword").innerHTML=playerGuess.replace(" ");
         guessesRemaining--;
         remainingLetters--; 
         } else if (chooseWord[j] != playerGuess) {
-            document.getElementById("guessedletters").innerHTML=playerGuess;
+            document.getElementById("guessesremaining").innerHTML=guessesRemaining;
         }
         
         console.log(guessesRemaining)
         }
     }
 
+// Win condition
+
+if (remainingLetters === 0) {
+    wins++;
+    document.getElementById("wincount").innerHTML=wins;
+}
 
 //     console.log(letter);
 //     // inside here lives some
