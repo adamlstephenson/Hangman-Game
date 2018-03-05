@@ -1,74 +1,86 @@
-
-let wins = 0;
-
-    document.getElementById("wincount").innerHTML=wins;
-
-// Words to guess array
+// Variables
+//=============================================================================================================
 
 let words = ['frodo', 'gandalf', 'samwise', 'gollum', 'sauron', 'aragorn', 'legolas', 'mordor', 'shadowfax',];
-let indiLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',];
-// let splitWords = words.split(" ")
-// console.log(splitWords)
+let answer = "";
+let lettersInWord = [];
+let remainingLetters = 0;
+let underscoreAnswers = [];
+let wrongGuesses = [];
+let wins = 0;
+let remainingGuesses = 12;
 
-// Random word selection
+// Functions
+//==============================================================================================================
 
-let chooseWord = words[Math.floor(Math.random() * words.length)];
+function startGame () {
+    chooseWord = words[Math.floor(Math.random() * words.length)];
+    lettersInWord = chooseWord.split("");
 
-    console.log(chooseWord)
+    console.log(chooseWord);
+    console.log(lettersInWord);
+}
+
+
+
+// Game Process
+//==============================================================================================================
+
+startGame();
 
 // Answer array and loop
 
-let answers = [];
+// let answers = [];
 
-for (let i = 0; i < chooseWord.length; i++) {
-    answers[i] = "  _  ";
-}
+// for (let i = 0; i < chooseWord.length; i++) {
+//     answers[i] = "  _  ";
+// }
 
-let remainingLetters = chooseWord.length;
+// let remainingLetters = chooseWord.length;
 
-    document.getElementById("blankword").innerHTML=answers.join("");
+//     document.getElementById("blankword").innerHTML=answers.join("");
 
-        console.log(answers);
-        console.log(remainingLetters);
+//         console.log(answers);
+      
 
 
 
-// User Guesses
+// // User Guesses
 
-let guessesRemaining = 12; // How many guesses are remaining
+// let guessesRemaining = 12; // How many guesses are remaining
 
-    document.getElementById("guessesremaining").innerHTML=guessesRemaining;
+//     document.getElementById("guessesremaining").innerHTML=guessesRemaining;
 
-let guessedLetters = []; // Display letters that have been guessed but are not correct
+// let guessedLetters = []; // Display letters that have been guessed but are not correct
 
-document.onkeypress = function(event) {
-    let playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    guessesRemaining--;
-    document.getElementById("guessesremaining").innerHTML=guessesRemaining;
+// document.onkeypress = function(event) {
+//     let playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
+//     guessesRemaining--;
+//     document.getElementById("guessesremaining").innerHTML=guessesRemaining;
     
-    for (var j = 0; j < chooseWord.length; j++) {
+//     for (var j = 0; j < chooseWord.length; j++) {
 
-        if (chooseWord[j] === playerGuess) {
-        answers[j] = playerGuess;
-        document.getElementById("blankword").innerHTML=answers.join("");
-        remainingLetters--;
-        console.log(remainingLetters);
+//         if (chooseWord[j] === playerGuess) {
+//         answers[j] = playerGuess;
+//         document.getElementById("blankword").innerHTML=answers.join("");
+//         remainingLetters--; 
+//         }
+
+//         if (remainingLetters === 0) {
+//             wins++;
+//             document.getElementById("wincount").innerHTML=wins;
+//         }
+//     }
+// }
         
-        // } else (chooseWord[j] != playerGuess); {
-        //     document.getElementById("guessedletters").innerHTML = playerGuess; 
+    //     } else (chooseWord[j] != playerGuess); {
+    //         document.getElementById("guessedletters").innerHTML = playerGuess; 
 
-        // }
+    //     }
         
-        console.log(guessesRemaining)
-        }
-    }
-
-// Win condition
-
-if (remainingLetters === 0) {
-    wins++;
-    document.getElementById("wincount").innerHTML=wins;
-}
+    //     console.log(guessesRemaining)
+    //     }
+    // }
 
 //     console.log(letter);
 //     // inside here lives some
