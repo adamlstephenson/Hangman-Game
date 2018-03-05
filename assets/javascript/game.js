@@ -78,6 +78,10 @@ function gameOver() {
         document.getElementById("wincount").innerHTML = wins;
         startGame();
     }
+    else if (remainingGuesses === 0) {
+        alert("Looooooooser");
+        startGame();
+    }
 }
 
 // Game Process
@@ -88,7 +92,6 @@ startGame();
 document.onkeypress = function(event) {
     let playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
     checkLetters(playerGuess);
-    gameOver();
-    
+    gameOver(); 
 
 }
