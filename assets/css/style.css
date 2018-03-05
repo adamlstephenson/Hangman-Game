@@ -6,14 +6,18 @@ html, body {
     background-image: url("https://s.aolcdn.com/hss/storage/midas/7d48de207b934a3e3a63e2aab34d2d09/205858706/lord_of_the_rings.jpg");
 }
 
+header {
+    margin-top: 2%;
+}
+
 h1 {
+    color: greenyellow;
     font-size: 100px;
     text-align: center;
-    background-color:green;
 }
 
 #game-display {
-    background-color: azure;
+    background-color: whitesmoke;
     margin-top: 10%;
     margin-left: 25%;
     width: 50%;
