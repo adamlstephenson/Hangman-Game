@@ -16,17 +16,37 @@ let remainingGuesses = 12;
 function startGame () {
     chooseWord = words[Math.floor(Math.random() * words.length)];
     lettersInWord = chooseWord.split("");
+    remainingLetters = lettersInWord.length;
+
+    remainingGuesses = 12;
+    wrongGuesses = [];
+    underscoreAnswers = [];
+
+    for (let i = 0; i < remainingLetters; i++) {
+        underscoreAnswers.push(" _ ");
+    }
+
+    document.getElementById("blankword").innerHTML=underscoreAnswers.join(" ");
+    document.getElementById("guessesremaining").innerHTML=remainingGuesses;
+    document.getElementById("wincount").innerHTML=wins;
+
 
     console.log(chooseWord);
     console.log(lettersInWord);
+    console.log(remainingLetters);
+    console.log(underscoreAnswers);
 }
-
-
 
 // Game Process
 //==============================================================================================================
 
 startGame();
+
+
+
+
+
+
 
 // Answer array and loop
 
@@ -35,21 +55,6 @@ startGame();
 // for (let i = 0; i < chooseWord.length; i++) {
 //     answers[i] = "  _  ";
 // }
-
-// let remainingLetters = chooseWord.length;
-
-//     document.getElementById("blankword").innerHTML=answers.join("");
-
-//         console.log(answers);
-      
-
-
-
-// // User Guesses
-
-// let guessesRemaining = 12; // How many guesses are remaining
-
-//     document.getElementById("guessesremaining").innerHTML=guessesRemaining;
 
 // let guessedLetters = []; // Display letters that have been guessed but are not correct
 
@@ -68,7 +73,7 @@ startGame();
 
 //         if (remainingLetters === 0) {
 //             wins++;
-//             document.getElementById("wincount").innerHTML=wins;
+//             
 //         }
 //     }
 // }
