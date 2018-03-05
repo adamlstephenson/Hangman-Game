@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-image: url("https://s.aolcdn.com/hss/storage/midas/7d48de207b934a3e3a63e2aab34d2d09/205858706/lord_of_the_rings.jpg");
 }
 
 h1 {
@@ -12,6 +13,8 @@ h1 {
 }
 
 #game-display {
+    background-color: azure;
+    margin-top: 10%;
     margin-left: 25%;
     width: 50%;
     border-style: solid;

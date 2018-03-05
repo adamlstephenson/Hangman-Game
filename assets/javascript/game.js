@@ -70,7 +70,7 @@ function gameOver() {
     console.log("Win count: " + wins + "| Guesses left: " + remainingGuesses);
 
     document.getElementById("guessesremaining").innerHTML = remainingGuesses;
-    document.getElementById("blankword").innerHTML.HTML = underscoreAnswers.join(" ");
+    document.getElementById("blankword").innerHTML=underscoreAnswers.join(" ");
     document.getElementById("guessedletters").innerHTML = wrongGuesses.join(" ");
 
     // Won
