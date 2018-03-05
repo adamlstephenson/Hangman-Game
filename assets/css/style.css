@@ -7,16 +7,18 @@ html, body {
 }
 
 header {
-    margin-top: 2%;
+    margin-top: 2.5%;
 }
 
 h1 {
     color: greenyellow;
     font-size: 100px;
     text-align: center;
+    font-family: 'Berkshire Swash', cursive;
 }
 
 #game-display {
+    font-family: 'Berkshire Swash', cursive;
     background-color: whitesmoke;
     margin-top: 10%;
     margin-left: 25%;
