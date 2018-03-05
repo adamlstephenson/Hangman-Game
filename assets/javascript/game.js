@@ -37,13 +37,46 @@ function startGame () {
     console.log(underscoreAnswers);
 }
 
+function checkLetters(letter) {
+
+    // Is letter in word?
+
+    let isLetterInWord = false;
+
+    for (let j = 0; j < remainingLetters; j++) {
+        if(chooseWord[j] === letter) {
+            isLetterInWord = true;
+        }
+    }
+
+    // Where is letter? Fill in the blank.
+
+    if(isLetterInWord) {
+        for (let k = 0; k < remainingLetters; k++) {
+            if(chooseWord[k] === letter) {
+                underscoreAnswers[k] = letter;
+            }
+        }
+    }
+    else {
+        wrongGuesses.push(letter);
+        remainingGuesses--
+    }
+    console.log(underscoreAnswers);
+    console.log(remainingGuesses);
+}
+
 // Game Process
 //==============================================================================================================
 
 startGame();
 
+document.onkeypress = function(event) {
+    let playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    checkLetters(playerGuess);
+    
 
-
+}
 
 
 
