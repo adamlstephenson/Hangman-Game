@@ -69,11 +69,15 @@ function checkLetters(letter) {
 function gameOver() {
     console.log("Win count: " + wins + "| Guesses left: " + remainingGuesses);
 
+    document.getElementById("guessesremaining").innerHTML = remainingGuesses;
+    document.getElementById("blankword").innerHTML.HTML = underscoreAnswers.join(" ");
+    document.getElementById("guessedletters").innerHTML = wrongGuesses.join(" ");
+
     // Won
 
     if(lettersInWord.toString() === underscoreAnswers.toString()) {
         wins++;
-        alert("Congratulations");
+        alert("Congratulations!");
 
         document.getElementById("wincount").innerHTML = wins;
         startGame();
